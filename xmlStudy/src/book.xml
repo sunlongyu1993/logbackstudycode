@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<contactList>
+    <contact id="1" vip = "true">
+        <name> sly1</name>
+        <gender> 女 </gender>
+        <email>111@qq.com</email>
+    </contact>
+    <contact id="2" vip = "false">
+        <name> sly2</name>
+        <gender> 男 </gender>
+        <email>112@qq.com</email>
+    </contact>
+    <contact id="3" vip = "true">
+        <name> sly3</name>
+        <gender> 女 </gender>
+        <email>113@qq.com</email>
+    </contact>
+    <user></user>
+</contactList>

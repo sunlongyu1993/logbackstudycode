@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--注释 -->
+ <student>
+    <name>sly</name>
+    <sex>女</sex>
+    <info>
+        <age>19</age>
+        <height>160</height>
+    </info>
+    <sql>
+        select * from user where age &lt; 90
+    </sql>
+</student>
