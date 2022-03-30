@@ -20,30 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e0db1d6-6ed1-4ae4-be72-403fb6b17798" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/Annotation/BookAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/Annotation/BookStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/Annotation/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/JunitTest/AnnotationTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/JunitTest/Mytest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/ProxyTest/ProxyUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/ProxyTest/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/ProxyTest/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/ProxyTest/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/reflectclass/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/reflectclass/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/reflectclass/TestStudent1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/reflectclass/reflectTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectclasscode/src/com/reflectclass/reflectUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/Contacts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/Contacts2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/book.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/books.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/com/dom4jStudy/Dome4jTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/lib/dom4j-2.1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/lib/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/lib/jaxen-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/src/lib/junit-4.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlStudy/xmldata/hello_world.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/FactoryCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Hawei.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Mac.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/lib/logback-classic-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/lib/logback-core-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/lib/slf4j-api-1.7.26.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/Business.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/run/MovieSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moviecode/src/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Computer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,34 +70,47 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/xmlStudy/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/moviecode/src" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\slycode\logbackcode\xmlStudy\src" />
-      <recent name="D:\code\slycode\logbackcode\xmlStudy\src\lib" />
-      <recent name="D:\code\slycode\logbackcode\xmlStudy\xmldata\lib" />
-      <recent name="D:\code\slycode\logbackcode\logbacktestmodul" />
-      <recent name="D:\code\slycode\logbackcode\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\slycode\logbackcode\xmlStudy\src\lib" />
       <recent name="D:\code\slycode\logbackcode\junitcode\lib" />
       <recent name="D:\code\slycode\logbackcode\logbacktestmodul\src" />
       <recent name="D:\code\slycode\logbackcode" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\slycode\logbackcode\moviecode\src" />
+      <recent name="D:\code\slycode\logbackcode\moviecode" />
+      <recent name="D:\code\slycode\logbackcode\xmlStudy\src" />
+      <recent name="D:\code\slycode\logbackcode\xmlStudy\src\lib" />
+      <recent name="D:\code\slycode\logbackcode\xmlStudy\xmldata\lib" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.Dome4jTest.MainTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="AnnotationTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.JunitTest.AnnotationTest1" />
       <module name="reflectclasscode" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.JunitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.modecode.Main" />
+      <module name="ModeStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modecode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,22 +162,6 @@
       <option name="PACKAGE_NAME" value="com.dom4jStudy" />
       <option name="MAIN_CLASS_NAME" value="com.dom4jStudy.Dome4jTest" />
       <option name="METHOD_NAME" value="MainTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="reflectclasscode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Annotation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Annotation" />
-      <option name="MAIN_CLASS_NAME" value="com.Annotation.MainTest" />
-      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -352,11 +339,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Dome4jTest.MainTest" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.AnnotationTest1" />
         <item itemvalue="JUnit.MainTest.test2" />
-        <item itemvalue="JUnit.MainTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -380,7 +367,9 @@
       <workItem from="1645496332434" duration="5665000" />
       <workItem from="1645778438425" duration="26449000" />
       <workItem from="1646790526336" duration="615000" />
-      <workItem from="1646979463923" duration="4297000" />
+      <workItem from="1646979463923" duration="5090000" />
+      <workItem from="1648031222101" duration="2530000" />
+      <workItem from="1648096921967" duration="12055000" />
     </task>
     <servers />
   </component>
@@ -400,37 +389,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1646388612349">
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1648187151960">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646388612349" />
+    <state x="669" y="-1005" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648041883733" />
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648187151960" />
     <state x="632" y="-935" key="FileChooserDialogImpl" timestamp="1646707511062">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="632" y="-935" key="FileChooserDialogImpl/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1646707511062" />
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1645171660343" />
-    <state width="1236" height="144" key="GridCell.Tab.0.bottom" timestamp="1646991907747">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1876" height="144" key="GridCell.Tab.0.bottom" timestamp="1648043816431">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="267" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1645178604985" />
+    <state width="1876" height="144" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
     <state width="1236" height="144" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907747" />
     <state width="1236" height="150" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1645435496059" />
-    <state width="1236" height="144" key="GridCell.Tab.0.center" timestamp="1646991907746">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1876" height="144" key="GridCell.Tab.0.center" timestamp="1648043816431">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="267" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1645178604984" />
+    <state width="1876" height="144" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
     <state width="1236" height="144" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907746" />
     <state width="1236" height="150" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1645435496058" />
-    <state width="1236" height="144" key="GridCell.Tab.0.left" timestamp="1646991907746">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1876" height="144" key="GridCell.Tab.0.left" timestamp="1648043816431">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="267" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1645178604984" />
+    <state width="1876" height="144" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
     <state width="1236" height="144" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907746" />
     <state width="1236" height="150" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1645435496058" />
-    <state width="1236" height="144" key="GridCell.Tab.0.right" timestamp="1646991907747">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1876" height="144" key="GridCell.Tab.0.right" timestamp="1648043816431">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="267" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1645178604985" />
+    <state width="1876" height="144" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
     <state width="1236" height="144" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907747" />
     <state width="1236" height="150" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1645435496058" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1645170387587">
@@ -441,10 +431,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="349" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1645591272260" />
-    <state x="334" y="-950" key="new project wizard" timestamp="1646641577845">
+    <state x="334" y="-950" key="new project wizard" timestamp="1646993418499">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="334" y="-950" key="new project wizard/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1646641577845" />
+    <state x="334" y="-950" key="new project wizard/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1646993418499" />
     <state x="56" y="0" key="new project wizard/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1645504872151" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1646273310685">
       <screen x="0" y="0" width="1280" height="680" />
