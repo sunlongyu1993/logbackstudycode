@@ -4,7 +4,10 @@ import com.movie.bean.Business;
 import com.movie.bean.Customer;
 import com.movie.bean.Movie;
 import com.movie.bean.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -27,6 +30,10 @@ public class MovieSystem {
      * 定义静态的系统扫描器,公共的方法
      */
     public static final Scanner SYS_SC = new Scanner(System.in);
+    public static User LoginName;//当前系统唯一的登录用户
+
+    public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//时间格式化
+    public static final Logger LOGGER = LoggerFactory.getLogger("MovieSystem.class"); //引入日志
 
     /**
      * 准备测试数据
@@ -108,7 +115,6 @@ public class MovieSystem {
                 case "2":
                     break;
                 case "3":
-
                     break;
                 default:
                     System.out.println("输入的命令有误，请重新输入");
@@ -132,6 +138,8 @@ public class MovieSystem {
                 //判断密码是否正确
                 if(user.getPwd().equals(pwd)){
                     //登录成功----TODO
+                    LoginName=user;//把user赋值给全量的用户
+                    LOGGER.info(user.getUsername()+"用户登录了系统——日志打印");
                     //判断用户登录或者商家登录
                     if(user instanceof Customer){
                         System.out.println("普通客户登录成功");
@@ -152,8 +160,9 @@ public class MovieSystem {
         }
     }
     //普通客户首页
-    private static void showBusinessMainPage() {
+    private static void showCustomerMainPage() {
         System.out.println("==================黑马程序员用户首页======================");
+        System.out.println(LoginName.getUsername()+(LoginName.getSex() == '男'?"先生":"女士"+"欢迎您进入客户首页"));
         System.out.println("请你选择要操作的功能");
         System.out.println("1、展示全部影片信息");
         System.out.println("2、根据电影名称查询电影信息");
@@ -176,8 +185,9 @@ public class MovieSystem {
         }
     }
     //商家首页
-    private static void showCustomerMainPage() {
+    private static void showBusinessMainPage() {
         System.out.println("==================商家首页======================");
+        System.out.println(LoginName.getUsername()+(LoginName.getSex() == '男'?"先生":"女士"+"欢迎您进入商家首页"));
         System.out.println("请你选择要操作的功能");
         System.out.println("1、展示详情");
         System.out.println("2、上架电影");
@@ -188,7 +198,9 @@ public class MovieSystem {
             System.out.println("请输入你要操作的命令");
             String command = SYS_SC.nextLine();
             switch (command){
-                case "1": break;
+                case "1":
+                    showBusinessInfo();
+                    break;
                 case "2": break;
                 case "3": break;
                 case "4": break;
@@ -202,12 +214,21 @@ public class MovieSystem {
 
     //根据登录名字查询用户对象
     public static User getUserByLoginName(String loginname){
-        for (User all_user : All_USERS) {
+        for (User user : All_USERS) {
             //查询此用户是否在数据库中
-            if(all_user.getLoginname().equals(loginname)){
-                return all_user;
+            if(user.getLoginname().equals(loginname)){
+                return user;
             }
         }
         return null;
     }
+
+    /**
+     * 当前商家的详细信息以及排片信息
+     */
+    private static void showBusinessInfo() {
+        LOGGER.info(LoginName.getUsername()+"商家，可以看自己的排片情况——日志打印");
+        
+    }
+
 }

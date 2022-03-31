@@ -20,20 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e0db1d6-6ed1-4ae4-be72-403fb6b17798" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/FactoryCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Hawei.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Mac.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/lib/logback-classic-1.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/lib/logback-core-1.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/lib/slf4j-api-1.7.26.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/Business.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/src/com/movie/run/MovieSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/moviecode/src/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ModeStudy/src/com/modecode/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moviecode/src/com/movie/run/MovieSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/moviecode/src/com/movie/run/MovieSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moviecode/src/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/moviecode/src/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +79,7 @@
       <recent name="D:\code\slycode\logbackcode\xmlStudy\xmldata\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MovieSystem">
     <configuration name="AnnotationTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.JunitTest.AnnotationTest1" />
       <module name="reflectclasscode" />
@@ -111,6 +99,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.modecode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.movie.run.MovieSystem" />
+      <module name="moviecode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.movie.run.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,22 +163,6 @@
       <option name="PACKAGE_NAME" value="com.dom4jStudy" />
       <option name="MAIN_CLASS_NAME" value="com.dom4jStudy.Dome4jTest" />
       <option name="METHOD_NAME" value="MainTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="reflectclasscode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Annotation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Annotation" />
-      <option name="MAIN_CLASS_NAME" value="com.Annotation.MainTest" />
-      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -339,11 +324,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MovieSystem" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Dome4jTest.MainTest" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.AnnotationTest1" />
-        <item itemvalue="JUnit.MainTest.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -369,7 +354,8 @@
       <workItem from="1646790526336" duration="615000" />
       <workItem from="1646979463923" duration="5090000" />
       <workItem from="1648031222101" duration="2530000" />
-      <workItem from="1648096921967" duration="12055000" />
+      <workItem from="1648096921967" duration="12107000" />
+      <workItem from="1648634238270" duration="7284000" />
     </task>
     <servers />
   </component>
@@ -394,34 +380,34 @@
     </state>
     <state x="669" y="-1005" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648041883733" />
     <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648187151960" />
-    <state x="632" y="-935" key="FileChooserDialogImpl" timestamp="1646707511062">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1648694551904">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="632" y="-935" key="FileChooserDialogImpl/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1646707511062" />
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1645171660343" />
-    <state width="1876" height="144" key="GridCell.Tab.0.bottom" timestamp="1648043816431">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648694551904" />
+    <state width="1876" height="243" key="GridCell.Tab.0.bottom" timestamp="1648720385303">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="144" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
-    <state width="1236" height="144" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907747" />
+    <state width="1876" height="243" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648720385303" />
+    <state width="1236" height="243" key="GridCell.Tab.0.bottom/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648720065489" />
     <state width="1236" height="150" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1645435496059" />
-    <state width="1876" height="144" key="GridCell.Tab.0.center" timestamp="1648043816431">
+    <state width="1876" height="243" key="GridCell.Tab.0.center" timestamp="1648720385302">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="144" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
-    <state width="1236" height="144" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907746" />
+    <state width="1876" height="243" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648720385302" />
+    <state width="1236" height="243" key="GridCell.Tab.0.center/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648720065488" />
     <state width="1236" height="150" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1645435496058" />
-    <state width="1876" height="144" key="GridCell.Tab.0.left" timestamp="1648043816431">
+    <state width="1876" height="243" key="GridCell.Tab.0.left" timestamp="1648720385301">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="144" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
-    <state width="1236" height="144" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907746" />
+    <state width="1876" height="243" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648720385301" />
+    <state width="1236" height="243" key="GridCell.Tab.0.left/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648720065487" />
     <state width="1236" height="150" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1645435496058" />
-    <state width="1876" height="144" key="GridCell.Tab.0.right" timestamp="1648043816431">
+    <state width="1876" height="243" key="GridCell.Tab.0.right" timestamp="1648720385303">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1876" height="144" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648043816431" />
-    <state width="1236" height="144" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1646991907747" />
+    <state width="1876" height="243" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1648720385303" />
+    <state width="1236" height="243" key="GridCell.Tab.0.right/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1648720065488" />
     <state width="1236" height="150" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1645435496058" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1645170387587">
       <screen x="0" y="0" width="1280" height="680" />

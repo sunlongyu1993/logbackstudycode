@@ -39,7 +39,7 @@
     -->
     <root level="ALL">
 <!--    <root level="INFO">-->
-<!--        <appender-ref ref="CONSOLE"/> &lt;!&ndash;日志在控制台进行打印&ndash;&gt;-->
+        <appender-ref ref="CONSOLE"/> <!--日志在控制台进行打印-->
         <appender-ref ref="FILE" />
     </root>
 
