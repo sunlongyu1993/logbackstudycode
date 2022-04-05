@@ -1,5 +1,7 @@
 package com.movie.bean;
 
+import java.util.Date;
+
 /**
  * @author 孙珑瑜
  * @version 20220325

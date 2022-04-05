@@ -37,9 +37,9 @@
    ， 默认debug
     <root>可以包含零个或多个<appender-ref>元素，标识这个输出位置将会被本日志级别控制。
     -->
-    <root level="ALL">
-<!--    <root level="INFO">-->
-<!--        <appender-ref ref="CONSOLE"/> &lt;!&ndash;日志在控制台进行打印&ndash;&gt;-->
+<!--    <root level="ALL">-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/> <!--日志在控制台进行打印-->
         <appender-ref ref="FILE" />
     </root>
 

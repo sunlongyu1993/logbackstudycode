@@ -19,12 +19,12 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String name, String actor, double time, double price, double score, Date starttime, int number) {
+    public Movie(String name, String actor, double time, double price,  Date starttime, int number) {
         this.name = name;
         this.actor = actor;
         this.time = time;
         this.price = price;
-        this.score = score;
+       // this.score = score;
         this.starttime = starttime;
         this.number = number;
     }
