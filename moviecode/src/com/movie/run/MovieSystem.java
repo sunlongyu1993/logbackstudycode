@@ -20,26 +20,20 @@ import java.util.*;
 public class MovieSystem {
     /**
      * 定义系统的数据容器用户存储数据
-     * 1、存储很多用户，商家，客户
+     * 1、存储很多用户（商家，客户）
      */
     public static final List<User> All_USERS = new ArrayList<>();
+
     /**
-     * 2、存储系统全部商家和排片信息
-     * 商家1=【p1,p2,p3】
+     * 2、存储系统全部商家和排片信息，商家有很多，一个商家有很多电影信息
+     * demo：商家1=【p1,p2,p3】
+     * 用集合-增删 存储排片信息
      */
     public static final Map<Business, List<Movie>> ALL_Movies = new HashMap<>();
     /**
-     * 定义静态的系统扫描器,公共的方法
-     */
-    public static final Scanner SYS_SC = new Scanner(System.in);
-    public static User LoginName;//当前系统唯一的登录用户
-
-    public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//时间格式化
-    public static final Logger LOGGER = LoggerFactory.getLogger("MovieSystem.class"); //引入日志
-
-    /**
-     * 准备测试数据
+     * 3、准备测试数据
      * @param args
+     * 用静态代码块的原因，在启动的时候，就将数据存储到集合中了，
      */
     static {
         //顾客
@@ -47,8 +41,8 @@ public class MovieSystem {
         customer1.setLoginname("sly1");
         customer1.setUsername("孙1");
         customer1.setUsername("孙1");
-        customer1.setMoney(99);
-        customer1.setPwd("123456");
+        customer1.setMoney(101);
+        customer1.setPwd("1234561");
         customer1.setPhone("18810671111");
         customer1.setSex('女');
         All_USERS.add(customer1);
@@ -56,8 +50,8 @@ public class MovieSystem {
         Customer customer2 = new Customer();
         customer2.setLoginname("sly2");
         customer2.setUsername("孙2");
-        customer2.setMoney(88);
-        customer2.setPwd("123456");
+        customer2.setMoney(202);
+        customer2.setPwd("1234562");
         customer2.setPhone("18810672222");
         customer1.setSex('男');
         All_USERS.add(customer2);
@@ -91,7 +85,15 @@ public class MovieSystem {
     }
 
     /**
-     * 首页
+     * 4、定义静态的系统扫描器,公共的方法
+     */
+    public static final Scanner SYS_SC = new Scanner(System.in);
+    public static User LoginName;//记住当前系统登录成功的唯一的登录用户
+    public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//时间格式化
+    public static final Logger LOGGER = LoggerFactory.getLogger("MovieSystem.class"); //引入日志
+
+    /**
+     * 启动入口
      * @param args
      */
     public static void main(String[] args) {
@@ -106,16 +108,20 @@ public class MovieSystem {
             System.out.println("1、登录");
             System.out.println("2、用户注册");
             System.out.println("3、商家注册");
-            System.out.println("4、请输入命令");
+            System.out.println("4、退出");
             String command = SYS_SC.nextLine();
             switch (command){
                 case "1":
-                    login();
+                    login();//登录
                     break;
                 case "2":
+
                     break;
                 case "3":
                     break;
+                case"4":
+                    System.out.println("退出登录页面");
+                    return;
                 default:
                     System.out.println("输入的命令有误，请重新输入");
             }
@@ -130,6 +136,7 @@ public class MovieSystem {
             String loginname = SYS_SC.nextLine();
             System.out.println("请输入密码");
             String pwd = SYS_SC.nextLine();
+
             //根据登录名字查询用户对象
             User user = getUserByLoginName(loginname);
             //判断用户是否存在，存在说明登录名错误
@@ -138,54 +145,33 @@ public class MovieSystem {
                 //判断密码是否正确
                 if(user.getPwd().equals(pwd)){
                     //登录成功----TODO
+
                     LoginName=user;//把user赋值给全量的用户
                     LOGGER.info(user.getUsername()+"用户登录了系统——日志打印");
                     //判断用户登录或者商家登录
-                    if(user instanceof Customer){
+                    if(user instanceof Customer){//客户类型
                         System.out.println("普通客户登录成功");
                         showCustomerMainPage();
                     }
-                    else {
+                    else {//商家类型
                         System.out.println("商家登录成功");
                         showBusinessMainPage();
                     }
                     return;
                 }
                 else {
-                    System.out.println("用户名密码错误，请确认");
+                    System.out.println("密码错误，请确认");
                 }
             }else {
                 System.out.println("登录名错误或者不存在，请确认");
             }
         }
     }
-    //普通客户首页
-    private static void showCustomerMainPage() {
-        System.out.println("==================黑马程序员用户首页======================");
-        System.out.println(LoginName.getUsername()+(LoginName.getSex() == '男'?"先生":"女士"+"欢迎您进入客户首页"));
-        System.out.println("请你选择要操作的功能");
-        System.out.println("1、展示全部影片信息");
-        System.out.println("2、根据电影名称查询电影信息");
-        System.out.println("3、评分功能");
-        System.out.println("4、购票功能");
-        System.out.println("5、退出系统");
-        while (true){
-            System.out.println("请输入你要操作的命令");
-            String command = SYS_SC.nextLine();
-            switch (command){
-                case "1": break;
-                case "2": break;
-                case "3": break;
-                case "4": break;
-                case "5": break;//退出系统
-                default:
-                    System.out.println("输入的命令有误，请重新输入");
-                    break;
-            }
-        }
-    }
+
+
     //商家首页
     private static void showBusinessMainPage() {
+        while (true){
         System.out.println("==================商家首页======================");
         System.out.println(LoginName.getUsername()+(LoginName.getSex() == '男'?"先生":"女士"+"欢迎您进入商家首页"));
         System.out.println("请你选择要操作的功能");
@@ -194,12 +180,12 @@ public class MovieSystem {
         System.out.println("3、下架电影");
         System.out.println("4、修改电影");
         System.out.println("5、退出");
-        while (true){
+
             System.out.println("请输入你要操作的命令");
             String command = SYS_SC.nextLine();
             switch (command){
                 case "1":
-                    showBusinessInfo();//展示全部排片信息
+                    showBusinessInfo();//展示商家的全部排片信息
                     break;
                 case "2":
                     //上架电影
@@ -221,147 +207,14 @@ public class MovieSystem {
             }
         }
     }
-
-    /**
-     * 影片修改功能
-     */
-    private static void updateMovie() {
-        System.out.println("============修改电影=====");
-        Business business = (Business) LoginName;
-        List<Movie> movies = ALL_Movies.get(business);
-        if (movies.size() == 0){
-            System.out.println("当前没有影片，无需修改");
-            return;
-        }
-        while (true){
-            System.out.println("请您输入需要修改的的电影名称：");
-            String movieName = SYS_SC.nextLine();
-            Movie movie = getMovieByName(movieName);
-
-            if(movie != null){
-                // 修改它
-                System.out.println("请您输入修改后的片名：");
-                String name  = SYS_SC.nextLine();
-                System.out.println("请您输入修改后主演：");
-                String actor  = SYS_SC.nextLine();
-                System.out.println("请您输入修改后时长：");
-                String time  = SYS_SC.nextLine();
-                System.out.println("请您输入修改后票价：");
-                String price  = SYS_SC.nextLine();
-                System.out.println("请您输入修改后票数：");
-                String totalNumber  = SYS_SC.nextLine(); // 200\n
-                while (true){
-                    try {
-                    System.out.println("请您输入修改后的影片放映时间：");
-                    String stime = SYS_SC.nextLine();
-                    movie.setName(name);
-                    movie.setActor(actor);
-                    movie.setTime(Double.valueOf(time));
-                    movie.setPrice(Double.valueOf(price));
-                    movie.setNumber(Integer.parseInt(totalNumber));
-                    movie.setStarttime(sdf.parse(stime));
-                    System.out.println("恭喜您，您成功修改了该影片了！！！");
-                    showBusinessInfo();//修改后查询一下所有信息
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-
-    }
-
-    /**
-     * 影片下架功能
-     */
-
-    private static void deleteMovie() {
-        System.out.println("============下架电影=====");
-        Business business = (Business) LoginName;
-        List<Movie> movies = ALL_Movies.get(business);
-        if (movies.size() == 0){
-            System.out.println("当前没有影片，无需下架");
-            return;
-        }
-        // 2、让用户选择需要下架的电影名称
-        while (true) {
-            System.out.println("请您输入需要下架的电影名称：");
-            String movieName = SYS_SC.nextLine();
-            Movie movie = getMovieByName(movieName);
-            // 3、去查询有没有这个影片对象。
-            if (movie != null) {
-                movies.remove(movie);
-                System.out.println("您当前店铺已经成功下架了：" + movie.getName());
-                showBusinessInfo();
-                return;
-            } else {
-                System.out.println("您的店铺没有上架该影片！");
-                System.out.println("请问继续下架吗？y/n");
-                String command = SYS_SC.nextLine();
-                switch (command) {
-                    case "y":
-                        System.out.println("继续下架此电影");
-                        break;
-                    case "n":
-                        System.out.println("不继续下架，结束此流程！");
-                        return;
-                }
-            }
-        }
-    }
-
-    /**
-     * 商家操作——上架电影
-     */
-    private static void addMovie() {
-        System.out.println("==========商家上架===================");
-        Business business = (Business) LoginName;
-        List<Movie> movies = ALL_Movies.get(business);
-        System.out.println("请您输入新片名：");
-        String name  = SYS_SC.nextLine();
-        System.out.println("请您输入主演：");
-        String actor  = SYS_SC.nextLine();
-        System.out.println("请您输入时长：");
-        String time  = SYS_SC.nextLine();
-        System.out.println("请您输入票价：");
-        String price  = SYS_SC.nextLine();
-        System.out.println("请您输入票数：");
-        String totalNumber  = SYS_SC.nextLine(); // 200\n
-        while (true){
-        try {
-        System.out.println("请您输入影片放映时间：yyyy/MM/dd HH:mm:ss");
-        String stime = SYS_SC.nextLine();
-        //    public Movie(String name, String actor, double time, double price,  Date starttime, int number) {
-            Movie movie = new Movie(name,actor,Double.valueOf(time),Double.valueOf(price),sdf.parse(stime),Integer.valueOf(totalNumber));
-            movies.add(movie);
-            System.out.println("商家上架成功《"+ movie.getName()+"》");
-            return;//上架成功需要退出
-        } catch (ParseException e) {
-            e.printStackTrace();
-            LOGGER.error("商家上架的时间解析异常，请检查");
-        }
-    }
-    }
-
-    //根据登录名字查询用户对象
-    public static User getUserByLoginName(String loginname){
-        for (User user : All_USERS) {
-            //查询此用户是否在数据库中
-            if(user.getLoginname().equals(loginname)){
-                return user;
-            }
-        }
-        return null;
-    }
-
     /**
      * 当前商家的详细信息以及排片信息
      */
     private static void showBusinessInfo() {
-        System.out.println("==================商家的详情页面=========================");
-        LOGGER.info(LoginName.getUsername()+"商家，可以看自己的排片情况——日志打印");
-        //根据商机对象(LoginName登录的用户)，获取排片信息
-        //展示商家自己的信息：
+        System.out.println("==================登录商家的详情页面=========================");
+        LOGGER.info(LoginName.getUsername()+"商家：可以看自己的排片情况——日志打印");
+        //根据键值对——用户对象(LoginName登录的用户)，获取map的值——排片信息
+        //展示商家以及排片信息的信息：
         Business business = (Business) LoginName;
         System.out.println(business.getShopName() +
                 "\t\t电话：" + business.getPhone()
@@ -380,23 +233,236 @@ public class MovieSystem {
                         + sdf.format(movie.getStarttime()));
             }
         }else {
-            System.out.println("店鋪当前无片，请上架电影");
+            System.out.println("店铺当前无片，请上架电影");
+        }
+    }
+    /**
+     * 商家操作——上架电影
+     */
+    private static void addMovie() {
+        System.out.println("==========商家上架===================");
+        Business business = (Business) LoginName;
+        List<Movie> movies = ALL_Movies.get(business);
+        System.out.println("请您输入新片名：");
+        String name  = SYS_SC.nextLine();
+        System.out.println("请您输入主演：");
+        String actor  = SYS_SC.nextLine();
+        System.out.println("请您输入时长：");
+        String time  = SYS_SC.nextLine();
+        System.out.println("请您输入票价：");
+        String price  = SYS_SC.nextLine();
+        System.out.println("请您输入票数：");
+        String totalNumber  = SYS_SC.nextLine(); // 200\n
+        while (true){
+            try {
+                System.out.println("请您输入影片放映时间：yyyy/MM/dd HH:mm:ss");
+                String stime = SYS_SC.nextLine();
+                //    public Movie(String name, String actor, double time, double price,  Date starttime, int number) {
+                Movie movie = new Movie(name,actor,Double.valueOf(time),Double.valueOf(price),sdf.parse(stime),Integer.valueOf(totalNumber));
+                movies.add(movie);
+                System.out.println("商家上架成功《"+ movie.getName()+"》");
+                return;//上架成功需要退出
+            } catch (ParseException e) {
+                e.printStackTrace();
+                LOGGER.error("商家上架的时间解析异常，请检查");
+            }
         }
     }
 
     /**
-     * 去查询当前商家下的排片
-     * 根据输入的电影名称，判断系统中是否有此电影，如果有则查找到，如果没有则返回null
+     * 商家操作——影片修改功能
      */
-    public static Movie getMovieByName(String movieName){
+    private static void updateMovie() {
+        System.out.println("============修改电影=====");
         Business business = (Business) LoginName;
         List<Movie> movies = ALL_Movies.get(business);
+        if (movies.size() == 0){//如果电影为0，则无片可以修改
+            System.out.println("当前没有影片，无需修改");
+            return;
+        }
+        //有电影
+        while (true){
+            System.out.println("请您输入需要修改的的电影名称：");
+            String movieName = SYS_SC.nextLine();
+            Movie movie = getMovieByName(movieName);//查询是否有电影名称
+            if(movie != null){
+                // 修改它
+                System.out.println("请您输入修改后的片名：");
+                String name  = SYS_SC.nextLine();
+                System.out.println("请您输入修改后主演：");
+                String actor  = SYS_SC.nextLine();
+                System.out.println("请您输入修改后时长：");
+                String time  = SYS_SC.nextLine();
+                System.out.println("请您输入修改后票价：");
+                String price  = SYS_SC.nextLine();
+                System.out.println("请您输入修改后票数：");
+                String totalNumber  = SYS_SC.nextLine(); // 200\n
+                while (true){
+                    try {
+                    System.out.println("请您输入修改后的影片放映时间：");
+                    String stime = SYS_SC.nextLine();
+
+                    movie.setName(name);
+                    movie.setActor(actor);
+                    movie.setTime(Double.valueOf(time));
+                    movie.setPrice(Double.valueOf(price));
+                    movie.setNumber(Integer.parseInt(totalNumber));
+                    movie.setStarttime(sdf.parse(stime));
+                    System.out.println("恭喜您，您成功修改了该影片了！！！");
+
+                    showBusinessInfo();//修改后查询一下所有信息
+                        return;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else {
+                System.out.println("您的店铺没有上架该影片！");
+                System.out.println("请问继续修改吗？y/n");
+                String command = SYS_SC.nextLine();
+                switch (command) {
+                    case "y":
+                        System.out.println("继续下架此电影");
+                        break;
+                    default:
+                        System.out.println("不继续修改，结束此流程！");
+                        return;
+                }
+            }
+        }
+
+    }
+
+    /**
+     * 商家操作——影片下架功能
+     */
+
+    private static void deleteMovie() {
+        System.out.println("============下架电影=====");
+        Business business = (Business) LoginName;
+        List<Movie> movies = ALL_Movies.get(business);
+        if (movies.size() == 0){//如果电影为0，则无片可以下架
+            System.out.println("当前没有影片，无需下架");
+            return;
+        }
+        // 2、让用户选择需要下架的电影名称
+        while (true) {
+            System.out.println("请您输入需要下架的电影名称：");
+            String movieName = SYS_SC.nextLine();
+            Movie movie = getMovieByName(movieName);
+            // 3、去查询有没有这个影片对象。
+            if (movie != null) {
+                movies.remove(movie);//根据查到的movie，删除需要下架的电影
+                System.out.println("您当前店铺已经成功下架了：" + movie.getName());
+                showBusinessInfo();
+                return;
+            } else {
+                System.out.println("您的店铺没有上架该影片！");
+                System.out.println("请问继续下架吗？y/n");
+                String command = SYS_SC.nextLine();
+                switch (command) {
+                    case "y":
+                        System.out.println("继续下架此电影");
+                        break;
+                    case "n":
+                        System.out.println("不继续下架，结束此流程！");
+                        return;//直接干掉此流程
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+    //普通客户首页
+    private static void showCustomerMainPage() {
+        while (true){
+            System.out.println("==================黑马程序员客户首页======================");
+            System.out.println(LoginName.getUsername()+(LoginName.getSex() == '男'?"先生":"女士"+"欢迎您进入客户首页"));
+            System.out.println("请你选择要操作的功能");
+            System.out.println("1、展示全部影片信息");
+            System.out.println("2、根据电影名称查询电影信息");
+            System.out.println("3、评分功能");
+            System.out.println("4、购票功能");
+            System.out.println("5、退出系统");
+            System.out.println("请输入你要操作的命令");
+            String command = SYS_SC.nextLine();
+            switch (command){
+                case "1":
+                    showAllMovies();
+                    break;
+                case "2": break;
+                case "3": break;
+                case "4":
+                    buyMovie();//购票功能
+                    break;
+                case "5": return;//退出系统
+                default:
+                    System.out.println("输入的命令有误，请重新输入");
+                    break;
+            }
+        }
+    }
+
+    /**
+     * 客户界面，展示全部商家以及所有排片
+     */
+    private static void showAllMovies() {
+        ALL_Movies.forEach((business, movies) ->{//键是商家，值是商家的排片
+            System.out.println(business.getShopName() +
+                    "\t\t电话：" + business.getPhone()
+                    + "\t\t地址:" + business.getAddress()
+                    + "\t\t余额：" + business.getMoney());
+            System.out.println("片名\t\t\t" +
+                    "主演\t\t" +
+                    "时长\t\t" +
+                    "评分\t\t" +
+                    "票价\t\t" +
+                    "余票数量\t\t" +
+                    "放映时间");
+            for (Movie movie : movies) {
+                System.out.println(movie.getName() +"\t\t\t"
+                        + movie.getActor() + "\t\t"
+                        + movie.getTime() + "\t\t"
+                        + movie.getScore() + "\t\t"
+                        + movie.getPrice() + "\t\t"
+                        + movie.getNumber() + "\t\t"
+                        + sdf.format(movie.getStarttime()));
+            }
+        });
+    }
+    //用户购票功能
+    private static void buyMovie() {
+
+    }
+
+    /**
+     * 去查询当前商家下的排片
+     * 根据输入的电影名称，查询系统中是否有此电影，如果有则查找到，如果没有则返回null
+     */
+    public static Movie getMovieByName(String movieName){
+        Business business = (Business) LoginName;//取当前登录的商家
+        List<Movie> movies = ALL_Movies.get(business);//获取商家的电影集合
         for (Movie movie : movies) {
             if(movie.getName().contains(movieName)){
                 return movie;
             }
         }
-        return null;
+        return null;//如果没有找到这个电影名称，则返回null；
+    }
+    //根据登录名字查询用户对象
+    public static User getUserByLoginName(String loginname){
+        for (User user : All_USERS) {
+            //查询此用户是否在数据库中
+            if(user.getLoginname().equals(loginname)){
+                return user;
+            }
+        }
+        return null;//登录名不存在
     }
 
 }

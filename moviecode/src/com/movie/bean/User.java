@@ -6,7 +6,7 @@ package com.movie.bean;
  * 定义父类
  */
 public class User {
-    private String loginname;//登录名
+    private String loginname;//登录名-昵称
     private String username;//用户名字真名
     private String pwd;//登录密码
     private char sex;//性别
