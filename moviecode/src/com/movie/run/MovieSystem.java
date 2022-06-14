@@ -8,6 +8,7 @@ import jdk.nashorn.internal.runtime.options.LoggingOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -26,7 +27,7 @@ public class MovieSystem {
 
     /**
      * 2、存储系统全部商家和排片信息，商家有很多，一个商家有很多电影信息
-     * demo：商家1=【p1,p2,p3】
+     * demo：商家1=排片信息【p1,p2,p3】
      * 用集合-增删 存储排片信息
      */
     public static final Map<Business, List<Movie>> ALL_Movies = new HashMap<>();
@@ -437,6 +438,98 @@ public class MovieSystem {
     }
     //用户购票功能
     private static void buyMovie() {
+        showAllMovies();//展示所有的排片
+        System.out.println("===========用户购票功能=================");
+        while (true){
+            System.out.println("请输入需要买票的门店：");
+            String shopName = SYS_SC.nextLine();//购买电影票的店铺
+            //1、查询是否存在该商家
+            Business business = getBusinessByShopName(shopName);
+            if (business == null){
+                System.out.println("对不起，没有该店铺");
+            }
+            else {
+                //2、商家全部的排片
+                System.out.println("");
+                List<Movie> movies = ALL_Movies.get(business);
+                //3、判断商家是否有上映的电影
+                if(movies.size() >0){
+                    //4、开始选片
+                    while (true){
+                        System.out.println("请输入需要购买的电影名称：");
+                        String movieName = SYS_SC.nextLine();//普通用户输入要购买的电影名称
+                        Movie movie = getMovieByBusAndMoviName(business, movieName);//根据商家以及用户查找的电影名称，获取到电影
+                        if(movie != null){
+                            //开始购买
+                            System.out.println("请输入电影的票数：");
+                            Integer buyNum = Integer.valueOf(SYS_SC.nextLine());
+                            if(movie.getNumber()>buyNum){
+                                //可以买票
+                                //当前需要花费的金额 BigDecimal-精度，multiply相乘
+                                double money = BigDecimal.valueOf(movie.getPrice()).multiply(BigDecimal.valueOf(buyNum)).doubleValue();
+                                if(LoginName.getMoney()>=money){
+                                //可以买票
+                                    System.out.println("您成功购买了电影名称是："+movie.getName()+"的票数："+buyNum+"张，总金额是："+money);
+                                    //更新登录用户的金额，更新商家的金额，更新商机的票数
+                                    LoginName.setMoney(LoginName.getMoney()-money);
+                                    business.setMoney(business.getMoney()+money);
+                                    movie.setNumber(movie.getNumber()-buyNum);
+                                    return;//结束方法
+
+                                }else{
+                                    //钱不够
+                                    System.out.println("您的余额不足，是否继续");
+                                    System.out.println("是否继续买票？y/n");
+                                    String command = SYS_SC.nextLine();
+                                    switch (command) {
+                                        case "y":
+                                            System.out.println("继续买票");
+                                            break;
+                                        case "n":
+                                            System.out.println("不买票了，结束此流程！");
+                                            return;//直接干掉此流程
+                                    }
+                                }
+
+
+                            }else {
+                                //票数不够
+                                System.out.println("当前最多可购买"+movie.getNumber());
+                                System.out.println("是否继续买票？y/n");
+                                String command = SYS_SC.nextLine();
+                                switch (command) {
+                                    case "y":
+                                        System.out.println("继续买票");
+                                        break;
+                                    case "n":
+                                        System.out.println("不买票了，结束此流程！");
+                                        return;//直接干掉此流程
+                                }
+                            }
+
+
+                        }
+                        else {
+                            System.out.println("输入的电影名称异常，请确认！！");
+                        }
+                    }
+                }
+                else {
+                    System.out.println("本电影院没有上映的电影");
+                    System.out.println("是否继续买票？y/n");
+                    String command = SYS_SC.nextLine();
+                    switch (command) {
+                        case "y":
+                            System.out.println("继续买票");
+                            break;
+                        case "n":
+                            System.out.println("不买票了，结束此流程！");
+                            return;//直接干掉此流程
+                    }
+                }
+            }
+        }
+
 
     }
 
@@ -463,6 +556,35 @@ public class MovieSystem {
             }
         }
         return null;//登录名不存在
+    }
+
+    /**
+     * 根据商家店铺名称，查询商家对象
+     */
+    public static Business getBusinessByShopName(String shopName){
+        Set<Business> businesses = ALL_Movies.keySet();
+        for (Business business : businesses) {
+            if(business.getShopName().equals(shopName)){
+                return business;
+            }
+        }
+        return  null;
+    }
+
+    /***
+     * 普通用户-根据传入的店铺名称，以及输入的要购买的电影名称，获取电影的排片信息
+     * @param business:商家
+     * @param movieName：用户输入的电影名称
+     * @return
+     */
+    public static Movie getMovieByBusAndMoviName(Business business,String movieName){
+        List<Movie> movies = ALL_Movies.get(business);
+        for (Movie movie : movies) {
+            if(movie.getName().contains(movieName)){
+                return movie;
+            }
+        }
+        return  null;
     }
 
 }
